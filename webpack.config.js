@@ -1,10 +1,9 @@
 /*
 created by wangrui on 2017/3/2
 */
-
 //一个常见的Webpack配置文件
 var webpack = require('webpack');
-
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: __dirname + "/app/index.js",
   output: {
@@ -26,7 +25,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css?modules!postcss'//跟前面相比就在后面加上了?modules css模块化
+        loader: 'style!css?modules'//跟前面相比就在后面加上了?modules css模块化
       }
     ]
   },
@@ -44,5 +43,8 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.optimize.UglifyJsPlugin(),
+    new HtmlWebpackPlugin({
+      template: __dirname + "/app/index.html"//new 一个这个插件的实例，并传入相关的参数
+    })
   ]
 }
