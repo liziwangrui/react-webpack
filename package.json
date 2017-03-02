@@ -1,0 +1,23 @@
+{
+  "name": "react-webpack",
+  "version": "1.0.0",
+  "description": "react+webpack构建web项目",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liziwangrui/react-webpack.git"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "wangrui",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/liziwangrui/react-webpack/issues"
+  },
+  "homepage": "https://github.com/liziwangrui/react-webpack#readme"
+}
