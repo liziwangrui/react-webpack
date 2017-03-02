@@ -6,6 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "react": "^15.4.2"
+  },
+  "devDependencies": {
+    "react": "^15.4.2"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/liziwangrui/react-webpack.git"
