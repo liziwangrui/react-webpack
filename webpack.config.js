@@ -22,14 +22,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel',
-        query: {
-          presets: ['es2015','react']
-        }
+        loader: 'babel'
       },
       {
         test: /\.css$/,
-        loader: 'style!css',
+        loader: 'style!css?modules!postcss'//跟前面相比就在后面加上了?modules css模块化
       }
     ]
   },

@@ -7,9 +7,11 @@
 // };
 import React from 'react';
 import configJson from './config.json';
+import styles from './greeter.css';
+
 class Greeter extends React.Component {
   render() {
-    return <div>{configJson.greetText}</div>
+    return <div className={styles.root}>{configJson.greetText}</div>
   }
 }
 export default Greeter;
