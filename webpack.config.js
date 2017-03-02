@@ -1,0 +1,51 @@
+/*
+created by wangrui on 2017/3/2
+*/
+
+//一个常见的Webpack配置文件
+var webpack = require('webpack');
+
+module.exports = {
+  entry: __dirname + "/app/index.js",
+  output: {
+    path: __dirname + "/build",
+    filename: "build.js"
+  },
+  devtool: 'eval-source-map',//配置生成Source Maps，便于调试
+
+  module: {
+    loaders: [
+      {
+        test: /\.json$/,
+        loader: "json"
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          presets: ['es2015','react']
+        }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css',
+      }
+    ]
+  },
+  //自动添加css浏览器前缀
+  postcss: [
+    require('autoprefixer')
+  ],
+  devServer: {
+    contentBase: "./build",//本地服务器所加载的页面所在的目录
+    colors: true,//终端中输出结果为彩色
+    historyApiFallback: true,//不跳转
+    inline: true,//实时刷新
+    port: 8060
+    },
+  plugins: [
+    new webpack.optimize.OccurenceOrderPlugin(),
+    new webpack.optimize.UglifyJsPlugin(),
+  ]
+}
