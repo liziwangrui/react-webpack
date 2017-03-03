@@ -4,6 +4,8 @@ created by wangrui on 2017/3/2
 //一个常见的Webpack配置文件
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+//webpack内置的优化插件 UglifyJsPlugin：压缩JS代码 ExtractTextPlugin：分离CSS和JS文件
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   entry: __dirname + "/app/index.js",
@@ -26,7 +28,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css?modules!postcss'//跟前面相比就在后面加上了?modules css模块化
+        loader: ExtractTextPlugin.extract('style','css')//跟前面相比就在后面加上了?modules css模块化
       }
     ]
   },
@@ -42,10 +44,13 @@ module.exports = {
     port: 8060
     },
   plugins: [
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin(),
+    new webpack.optimize.OccurenceOrderPlugin(),//为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
+    new webpack.optimize.UglifyJsPlugin(),//压缩jjs
     new HtmlWebpackPlugin({
       template: __dirname + "/app/index.html"//new 一个这个插件的实例，并传入相关的参数
-    })
+    }),
+    new ExtractTextPlugin('./[name].[contenthash].css', {
+            allChunks: true
+        }),
   ]
 }
