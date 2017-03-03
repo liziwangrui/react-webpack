@@ -26,7 +26,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        loader: 'style!css?modules'//跟前面相比就在后面加上了?modules css模块化
+        loader: 'style!css?modules!postcss'//跟前面相比就在后面加上了?modules css模块化
       }
     ]
   },

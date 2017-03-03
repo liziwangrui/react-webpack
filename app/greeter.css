@@ -1,9 +1,11 @@
-.content-box {
-  /*background-color: #eee;
-  padding: 10px;
-  border: 3px solid #ccc;*/
-  color: red;
-  width: 100px;
-  height: 100px;
-  background-color: #eee;
+.simple {
+  width: 500px;
+  margin: 20px auto;
+}
+
+.fancy {
+  width: 500px;
+  margin: 20px auto;
+  padding: 50px;
+  border: solid blue 10px;
 }
