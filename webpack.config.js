@@ -9,7 +9,7 @@ module.exports = {
   entry: __dirname + "/app/index.js",
   output: {
     path: __dirname + "/build",
-    filename: "build.js"
+    filename: "bundle.js"
   },
   devtool: 'eval-source-map',//配置生成Source Maps，便于调试
 
