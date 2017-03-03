@@ -11,7 +11,7 @@ module.exports = {
   entry: __dirname + "/app/index.js",
   output: {
     path: __dirname + "/build",
-    filename: "bundle.js"
+    filename: "[name]-[hash].js"
   },
   devtool: 'eval-source-map',//配置生成Source Maps，便于调试
 
@@ -49,8 +49,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: __dirname + "/app/index.html"//new 一个这个插件的实例，并传入相关的参数
     }),
-    new ExtractTextPlugin('./[name].[contenthash].css', {
-            allChunks: true
-        }),
+    new ExtractTextPlugin("[name]-[hash].css"),
+    // new ExtractTextPlugin('./[name].[contenthash].css', {
+    //         allChunks: true
+    //     }),
   ]
 }
