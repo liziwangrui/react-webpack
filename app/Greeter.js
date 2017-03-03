@@ -11,7 +11,7 @@ import './greeter.css';
 
 class Greeter extends React.Component {
   render() {
-    return <div className="root">{configJson.greetText}</div>
+    return <div className="content-box">{configJson.greetText}</div>
   }
 }
 export default Greeter;

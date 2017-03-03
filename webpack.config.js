@@ -4,6 +4,7 @@ created by wangrui on 2017/3/2
 //一个常见的Webpack配置文件
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+
 module.exports = {
   entry: __dirname + "/app/index.js",
   output: {
