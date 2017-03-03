@@ -1,5 +1,5 @@
 import React,{ Component } from 'react';
-import Radio from '../components/Radio';
+import Radio from 'components/Radio';
 class RadioContainer extends Component {
   constructor(props){
     super(props);

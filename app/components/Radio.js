@@ -12,7 +12,7 @@ class Radio extends Component {
         return(
           <div key={index}>
             <input type="radio" name={item.name}
-            defaultChecked={item.checked} 
+            defaultChecked={item.checked}
             onChange={this.props.onChange.bind(this,index)}/>
           </div>
         )

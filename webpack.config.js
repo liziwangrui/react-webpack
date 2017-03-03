@@ -4,6 +4,7 @@ created by wangrui on 2017/3/2
 //一个常见的Webpack配置文件
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path');
 //webpack内置的优化插件 UglifyJsPlugin：压缩JS代码 ExtractTextPlugin：分离CSS和JS文件
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -32,6 +33,18 @@ module.exports = {
       }
     ]
   },
+  resolve: {
+    extensions: ['', '.webpack.js', '.web.js', '.tsx', '.js', '.scss'],
+    alias: {
+      components: path.resolve(__dirname, './app/components'),
+      actions: path.resolve(__dirname, './app/actions'),
+      reducers: path.resolve(__dirname, './app/reducers'),
+      images: path.resolve(__dirname, './app/images'),
+      containers: path.resolve(__dirname, './app/containers'),
+      common: path.resolve(__dirname, './app/common'),
+      utils: path.resolve(__dirname, './app/utils')
+    }
+    },
   //自动添加css浏览器前缀
   postcss: [
     require('autoprefixer')
