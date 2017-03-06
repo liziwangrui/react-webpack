@@ -12,16 +12,17 @@
 
 import React from 'react'
 import { render } from 'react-dom'
-import { Provider } from 'react-redux'
+import { browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 import { createStore } from 'redux'
-import todoApp from 'reducers'
+import { Router } from 'react-router'
+import configureStore from './store/configureStore'
+import Root from 'containers/AppRoute'
 import App from 'components/App'
 
-let store = createStore(todoApp)
-
+const store = configureStore();
+const history = syncHistoryWithStore(browserHistory, store)
 render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Root store={store} history={history}/>,
   document.getElementById('root')
 );

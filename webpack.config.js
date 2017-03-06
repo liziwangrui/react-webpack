@@ -42,7 +42,8 @@ module.exports = {
       images: path.resolve(__dirname, './app/images'),
       containers: path.resolve(__dirname, './app/containers'),
       common: path.resolve(__dirname, './app/common'),
-      utils: path.resolve(__dirname, './app/utils')
+      utils: path.resolve(__dirname, './app/utils'),
+      scripts: path.resolve(__dirname, './app/scripts')
     }
     },
   //自动添加css浏览器前缀
